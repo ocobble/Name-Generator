@@ -14,7 +14,7 @@ import javax.swing.JList;
 
 public class Naruto_Frame extends JFrame
 {
-    JPanel questionsPanel = new JPanel(new FlowLayout());
+    JPanel questionsPanel = new JPanel(new GridLayout(4,1,5,20));
     JPanel ninjafyPanel = new JPanel();
     JPanel namePanel = new JPanel();
     JPanel villagePanel = new JPanel();
@@ -34,7 +34,6 @@ public class Naruto_Frame extends JFrame
     
     JList<String> hogwartsHouses = new JList<String>(houses);
     JScrollPane scroller = new JScrollPane(hogwartsHouses);
-    //hogwartsHouses.add(scroller);
     
     JButton ninjafy = new JButton("Ninjafy!");
     
@@ -57,6 +56,7 @@ public class Naruto_Frame extends JFrame
         hogwartsHouse.setHorizontalAlignment(JTextField.LEFT);
         ninjaName.setHorizontalAlignment(JTextField.CENTER);
         lessAwkward.setHorizontalAlignment(JLabel.CENTER);
+        ninjafy.setHorizontalAlignment(JButton.CENTER);
         
         JLabel leafLabel = new JLabel(leaf);
         //villagePanel.add(leafLabel);
@@ -133,7 +133,7 @@ public class Naruto_Frame extends JFrame
             
                 });
         
-        setSize(210,600);
+        setSize(600,600);
         setVisible(true);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
