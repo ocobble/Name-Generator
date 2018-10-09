@@ -34,7 +34,7 @@ public class Naruto_Frame extends JFrame
     
     JList<String> hogwartsHouses = new JList<String>(houses);
     JScrollPane scroller = new JScrollPane(hogwartsHouses);
-    //hogwartsHouses.add(scroller);
+    hogwartsHouses.add(scroller);
     
     JButton ninjafy = new JButton("Ninjafy!");
     
