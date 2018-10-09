@@ -73,7 +73,7 @@ public class Naruto_Frame extends JFrame
         questionsPanel.add(lastName);
         questionsPanel.add(hogwartsLabel);
         //questionsPanel.add(hogwartsHouse);
-        questionsPanel.add(hogwartsHouses);
+        questionsPanel.add(scroller);
         
         questionsPanel.add(ninjafy);
         
