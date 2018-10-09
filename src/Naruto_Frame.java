@@ -26,7 +26,7 @@ public class Naruto_Frame extends JFrame
     
     JLabel firstLabel = new JLabel("Enter first name");
     JLabel lastLabel = new JLabel("Enter last name");
-    JLabel hogwartsLabel = new JLabel("Select your hogwarts house");
+    JLabel hogwartsLabel = new JLabel("Select your Hogwarts house");
     JLabel lessAwkward = new JLabel("You are:" );
     
     String[] houses = {"Gryffindor", "Ravenclaw", "Hufflepuff", "Slytherin", "idk man"};
