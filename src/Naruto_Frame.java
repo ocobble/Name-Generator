@@ -97,8 +97,13 @@ public class Naruto_Frame extends JFrame
                 ninjaLast = Name_Helper.ninjafy(lastName.getText());
                 ninjaVillage = Name_Helper.villageIdentifier(hogwartsHouses.getSelectedValue());
                 
-                ninjaName.setText(ninjaFirst + " " + ninjaLast + " of the " + ninjaVillage);
+                if (!ninjaVillage.equals("None"))
+                {
+                	ninjaName.setText(ninjaFirst + " " + ninjaLast + " of the " + ninjaVillage);
+                }
+                
                 villagePanel.removeAll();
+                
                 switch(ninjaVillage)
                 {
                     case("Leaf"):
@@ -122,12 +127,16 @@ public class Naruto_Frame extends JFrame
                         fave = Color.ORANGE;
                         break;
                 }
-                questionsPanel.setBackground(fave);
-                villagePanel.setBackground(fave);
-                ninjafyPanel.setBackground(fave);
-                namePanel.setBackground(fave);
-                questionsPanel.setForeground(Color.BLACK);
-                villagePanel.updateUI();
+                
+                if (!ninjaVillage.equals("None"))
+                {
+                	questionsPanel.setBackground(fave);
+                	villagePanel.setBackground(fave);
+                	ninjafyPanel.setBackground(fave);
+                	namePanel.setBackground(fave);
+                	questionsPanel.setForeground(Color.BLACK);
+                	villagePanel.updateUI();
+                }
                 
             }
             
