@@ -89,6 +89,7 @@ public class Naruto_Frame extends JFrame
         this.add(namePanel);
         pack();
         
+        ninjafy.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
             String ninjaFirst;
             String ninjaLast;
