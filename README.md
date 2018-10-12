@@ -1,26 +1,3 @@
-# I'm sorry for the way that I am
+# Find out your ninja name!
 
-# Table of contents
-
-[Section one](#section-one)
-
-[Section two](#section-two)
-
-[Section three](#section-three)
-
-
-## Section one
-nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
-nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
-nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
-
-## Section two
-pppppppppppppppppppppppppppppppppppp
-ppppppppppppppppppppppppppppppppppp
-ppppppppppppppppppppppppppppppppppp
-pppppppppppppppppppppppppppppppppp
-
-## Section three
-ssssssssssssssssssssssssssssssssssssss
-sssssssssssssssssssssssssssssssssssss
-sssssssssssssssssssssssssssssssss
+Have you ever wondered what your name would be if you were a ninja? Now you can find out with this simple name generator! You can also find out which village you are affiliated with from the world of Naruto.
