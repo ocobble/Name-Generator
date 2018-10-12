@@ -5,6 +5,12 @@ public class Name_Helper {
 
     public static String ninjafy(String name) {
         String ninjyName = "";
+        
+        if (name.length() == 0)
+        {
+        	return ninjyName;
+        }
+        
         int startingPlace = name.length() - 1;
         for (int i = startingPlace; i > (startingPlace - 3) && i > 0; --i) { // You can change this!
             char letter = name.charAt(i);
@@ -19,6 +25,12 @@ public class Name_Helper {
         return ninjyName;
     }
     public static String villageIdentifier(String hog) {
+    	
+    	if (hog == null)
+    	{
+    		return "None";
+    	}
+    	
         if (hog.equalsIgnoreCase("Gryffindor")) {
             return "Leaf";
         }
