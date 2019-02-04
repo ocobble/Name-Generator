@@ -207,6 +207,14 @@ public class Naruto_Frame extends JFrame
                 	errorLabel.setText("Please select a Hogwarts house");
                 }
                 
+<<<<<<< HEAD
+=======
+                if (!ninjaVillage.equals("None"))
+                {
+                	ninjaName.setText(ninjaFirst + " " + ninjaLast + " of the " + ninjaVillage);
+                }
+                
+>>>>>>> a494ac8a58f11ae5679d305c35f34bb57c614e34
                 villagePanel.removeAll();
                 
                 switch(ninjaVillage)
@@ -232,6 +240,19 @@ public class Naruto_Frame extends JFrame
                         fave = Color.ORANGE;
                         break;
                 }
+<<<<<<< HEAD
+=======
+                
+                if (!ninjaVillage.equals("None"))
+                {
+                	questionsPanel.setBackground(fave);
+                	villagePanel.setBackground(fave);
+                	ninjafyPanel.setBackground(fave);
+                	namePanel.setBackground(fave);
+                	questionsPanel.setForeground(Color.BLACK);
+                	villagePanel.updateUI();
+                }
+>>>>>>> a494ac8a58f11ae5679d305c35f34bb57c614e34
                 
                 if (!ninjaVillage.equals("None"))
                 {
