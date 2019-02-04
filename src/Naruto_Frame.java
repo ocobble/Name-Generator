@@ -245,69 +245,6 @@ public class Naruto_Frame extends JFrame
            	villagePanel.updateUI();
             }
                 
-        public void actionPerformed(ActionEvent e) {
-            String ninjaFirst;
-            String ninjaLast;
-            String ninjaVillage;
-            Color fave = null;
-            
-            ninjaFirst = Name_Helper.ninjafy(firstName.getText());
-            ninjaLast = Name_Helper.ninjafy(lastName.getText());
-            ninjaVillage = Name_Helper.villageIdentifier(hogwartsHouses.getSelectedValue());
-            
-            if (!ninjaVillage.equals("None"))
-            {
-            	ninjaName.setText(ninjaFirst + " " + ninjaLast + " of the " + ninjaVillage);
-            }
-            
-            else {
-            	errorLabel.setText("Please select a Hogwarts house");
-            }
-            
-            villagePanel.removeAll();
-            
-            switch(ninjaVillage)
-            {
-                case("Leaf"):
-                    villagePanel.add(leafLabel);
-                    fave = Color.green;
-                    break;
-                case("Cloud"):
-                    villagePanel.add(cloudLabel);
-                    fave = Color.YELLOW;
-                     break;
-                case("Sand"):
-                    villagePanel.add(sandLabel);
-                    fave = Color.orange;
-                    break;
-                case("Mist"):
-                    villagePanel.add(mistLabel);
-                    fave = Color.BLUE;
-                    break;
-                case("Stone"):
-                    villagePanel.add(stoneLabel);
-                    fave = Color.ORANGE;
-                    break;
-            }
-            
-            if (!ninjaVillage.equals("None"))
-            {
-            	questionsPanel.setBackground(fave);
-            	villagePanel.setBackground(fave);
-            	ninjafyPanel.setBackground(fave);
-            	namePanel.setBackground(fave);
-            	questionsPanel.setForeground(Color.BLACK);
-            	
-            }
-            else
-            {
-            	villagePanel.add(errorLabel);
-            	errorLabel.setText("Please select a Hogwarts house");
-            }
-            
-            villagePanel.updateUI();
-        }
-        
             });
         
         setSize(600,600);
