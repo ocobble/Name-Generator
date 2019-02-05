@@ -19,22 +19,20 @@ import javax.swing.JList;
 
 public class Naruto_Frame extends JFrame
 {
-    //JPanel questionsPanel = new JPanel(new GridLayout(4,1,5,20));
-
 	JPanel questionsPanel;
     JPanel ninjafyPanel = new JPanel();
     JPanel namePanel = new JPanel();
     JPanel villagePanel = new JPanel();
     
-    JTextField firstName = new JTextField(10);
-    JTextField lastName = new JTextField(10);
-    JTextField hogwartsHouse = new JTextField(10);
-    JTextField ninjaName = new JTextField(20);
+    JTextField firstNameField = new JTextField(10);
+    JTextField lastNameField = new JTextField(10);
+    JTextField hogwartsHouseField = new JTextField(10);
+    JTextField ninjaNameField = new JTextField(20);
     
     JLabel firstLabel = new JLabel("Enter first name");
     JLabel lastLabel = new JLabel("Enter last name");
     JLabel hogwartsLabel = new JLabel("Select your hogwarts house");
-    JLabel lessAwkward = new JLabel("You are:" );
+    JLabel resultLabel = new JLabel("You are:" );
     JLabel errorLabel = new JLabel();
     
     String[] houses = {"Gryffindor", "Ravenclaw", "Hufflepuff", "Slytherin", "idk man"};
@@ -53,28 +51,30 @@ public class Naruto_Frame extends JFrame
         super(title);
         setLayout(new GridLayout(3, 0));
         
-        
+        /* Set alignments of all elements */
         firstLabel.setHorizontalAlignment(JLabel.LEFT);
         lastLabel.setHorizontalAlignment(JLabel.LEFT);
         hogwartsLabel.setHorizontalAlignment(JLabel.LEFT);
-        firstName.setHorizontalAlignment(JTextField.LEFT);
-        lastName.setHorizontalAlignment(JTextField.LEFT);
-        hogwartsHouse.setHorizontalAlignment(JTextField.LEFT);
-        ninjaName.setHorizontalAlignment(JTextField.CENTER);
-        lessAwkward.setHorizontalAlignment(JLabel.CENTER);
+        firstNameField.setHorizontalAlignment(JTextField.LEFT);
+        lastNameField.setHorizontalAlignment(JTextField.LEFT);
+        hogwartsHouseField.setHorizontalAlignment(JTextField.LEFT);
+        ninjaNameField.setHorizontalAlignment(JTextField.CENTER);
+        resultLabel.setHorizontalAlignment(JLabel.CENTER);
         ninjafy.setHorizontalAlignment(JButton.CENTER);
         
+        /*
+         * Questions panel is a gridbag layout, so
+         * set constraints of each element and add them
+         */
         
         GridBagLayout gridbag = new GridBagLayout();
         GridBagConstraints c = new GridBagConstraints();
 
         questionsPanel = new JPanel(gridbag);
-        //setFont(new Font("SansSerif", Font.PLAIN, 14));
-        //setLayout(gridbag);
 
         c.fill = GridBagConstraints.BOTH;
         c.weightx = 1;
-        c.gridwidth = 1;                //reset to the default
+        c.gridwidth = 1;
         c.gridheight = 1;
         c.ipady = 0;
         
@@ -84,109 +84,54 @@ public class Naruto_Frame extends JFrame
         
         c.gridwidth = GridBagConstraints.REMAINDER;
         c.weightx = 1;
-        //c.ipady = 2;
         
-        gridbag.setConstraints(firstName, c);
-        questionsPanel.add(firstName);
+        gridbag.setConstraints(firstNameField, c);
+        questionsPanel.add(firstNameField);
         
         c.gridwidth = 1;
-        //c.ipady = 1;
         
         gridbag.setConstraints(lastLabel, c);
         questionsPanel.add(lastLabel);
         
         c.gridwidth = GridBagConstraints.REMAINDER;
-        //c.ipady = 2;
         
-        gridbag.setConstraints(lastName, c);
-        questionsPanel.add(lastName);
+        gridbag.setConstraints(lastNameField, c);
+        questionsPanel.add(lastNameField);
         
         c.gridwidth = 1;
-        //c.ipady = 1;
         
         gridbag.setConstraints(hogwartsLabel, c);
         questionsPanel.add(hogwartsLabel);
         
         c.gridwidth = GridBagConstraints.REMAINDER;
-        //c.ipady = 2;
         
         gridbag.setConstraints(houseScroller, c);
         questionsPanel.add(houseScroller);
         
-        //c.weightx = 500;
         c.ipadx = 50;
         c.fill = GridBagConstraints.NONE;
         c.gridheight = 3;
         
         gridbag.setConstraints(ninjafy, c);
         questionsPanel.add(ninjafy);
-        
-        //gridbag.setConstraints(errorLabel, c);
-        //questionsPanel.add(errorLabel);
-        //gridbag.setConstraints(firstName, c);
-        //add(firstName);
-        
-        
-        /*
-        makebutton("Button3", gridbag, c);
 
-        c.gridwidth = GridBagConstraints.REMAINDER; //end row
-        makebutton("Button4", gridbag, c);
-
-        c.weightx = 0.0;                //reset to the default
-        makebutton("Button5", gridbag, c); //another row
-
-        c.gridwidth = GridBagConstraints.RELATIVE; //next-to-last in row
-        makebutton("Button6", gridbag, c);
-
-        c.gridwidth = GridBagConstraints.REMAINDER; //end row
-        makebutton("Button7", gridbag, c);
-
-        c.gridwidth = 1;                //reset to the default
-        c.gridheight = 2;
-        c.weighty = 1.0;
-        makebutton("Button8", gridbag, c);
-
-        c.weighty = 0.0;                //reset to the default
-        c.gridwidth = GridBagConstraints.REMAINDER; //end row
-        c.gridheight = 1;               //reset to the default
-        makebutton("Button9", gridbag, c);
-        makebutton("Button10", gridbag, c);
-
-        setSize(300, 100);
-        */
         JLabel leafLabel = new JLabel(leaf);
-        //villagePanel.add(leafLabel);
         JLabel cloudLabel = new JLabel(cloud);
         JLabel sandLabel = new JLabel(sand);
         JLabel mistLabel = new JLabel(mist);
         JLabel stoneLabel = new JLabel(stone);
         
-        
-        
-        /*
-        questionsPanel.add(firstLabel);
-        questionsPanel.add(firstName);
-        questionsPanel.add(lastLabel);
-        questionsPanel.add(lastName);
-        questionsPanel.add(hogwartsLabel);
-        //questionsPanel.add(hogwartsHouse);
-        questionsPanel.add(scroller);
-        
-        questionsPanel.add(ninjafy);
-        */
-        
-        namePanel.add(lessAwkward);
-        namePanel.add(ninjaName);
+        namePanel.add(resultLabel);
+        namePanel.add(ninjaNameField);
         
         villagePanel.add(errorLabel);
         
         this.add(questionsPanel);
-        //this.add(ninjafyPanel);
         this.add(villagePanel);
         this.add(namePanel);
         pack();
         
+        /* Button action listener */
         ninjafy.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String ninjaFirst;
@@ -194,22 +139,17 @@ public class Naruto_Frame extends JFrame
                 String ninjaVillage;
                 Color fave = null;
                 
-                ninjaFirst = Name_Helper.ninjafy(firstName.getText());
-                ninjaLast = Name_Helper.ninjafy(lastName.getText());
+                ninjaFirst = Name_Helper.ninjafy(firstNameField.getText());
+                ninjaLast = Name_Helper.ninjafy(lastNameField.getText());
                 ninjaVillage = Name_Helper.villageIdentifier((String) houseScroller.getSelectedItem());
                 
                 if (!ninjaVillage.equals("None"))
                 {
-                	ninjaName.setText(ninjaFirst + " " + ninjaLast + " of the " + ninjaVillage);
+                	ninjaNameField.setText(ninjaFirst + " " + ninjaLast + " of the " + ninjaVillage);
                 }
                 
                 else {
                 	errorLabel.setText("Please select a Hogwarts house");
-                }
-                
-                if (!ninjaVillage.equals("None"))
-                {
-                	ninjaName.setText(ninjaFirst + " " + ninjaLast + " of the " + ninjaVillage);
                 }
                 
                 villagePanel.removeAll();
