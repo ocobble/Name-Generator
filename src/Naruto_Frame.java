@@ -1,21 +1,16 @@
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.JList;
 
 public class Naruto_Frame extends JFrame
 {
@@ -143,60 +138,53 @@ public class Naruto_Frame extends JFrame
                 ninjaLast = Name_Helper.ninjafy(lastNameField.getText());
                 ninjaVillage = Name_Helper.villageIdentifier((String) houseScroller.getSelectedItem());
                 
-                if (!ninjaVillage.equals("None"))
-                {
-                	ninjaNameField.setText(ninjaFirst + " " + ninjaLast + " of the " + ninjaVillage);
-                }
-                
-                else {
-                	errorLabel.setText("Please select a Hogwarts house");
-                }
-                
                 villagePanel.removeAll();
                 
-                switch(ninjaVillage)
+                if (!ninjaFirst.isEmpty() || !ninjaLast.isEmpty())
                 {
-                    case("Leaf"):
-                        villagePanel.add(leafLabel);
-                        fave = Color.green;
-                        break;
-                    case("Cloud"):
-                        villagePanel.add(cloudLabel);
-                        fave = Color.YELLOW;
-                         break;
-                    case("Sand"):
-                        villagePanel.add(sandLabel);
-                        fave = Color.orange;
-                        break;
-                    case("Mist"):
-                        villagePanel.add(mistLabel);
-                        fave = Color.BLUE;
-                        break;
-                    case("Stone"):
-                        villagePanel.add(stoneLabel);
-                        fave = Color.ORANGE;
-                        break;
-                }
-                
-                if (!ninjaVillage.equals("None"))
-                {
-                	questionsPanel.setBackground(fave);
+                	ninjaNameField.setText(ninjaFirst + " " + ninjaLast + " of the " + ninjaVillage);
+                	
+                    switch(ninjaVillage)
+                    {
+                        case("Leaf"):
+                            villagePanel.add(leafLabel);
+                            fave = Color.green;
+                            break;
+                        case("Cloud"):
+                            villagePanel.add(cloudLabel);
+                            fave = Color.YELLOW;
+                             break;
+                        case("Sand"):
+                            villagePanel.add(sandLabel);
+                            fave = Color.orange;
+                            break;
+                        case("Mist"):
+                            villagePanel.add(mistLabel);
+                            fave = Color.BLUE;
+                            break;
+                        case("Stone"):
+                            villagePanel.add(stoneLabel);
+                            fave = Color.ORANGE;
+                            break;
+                    }
+                    
+                    questionsPanel.setBackground(fave);
                 	villagePanel.setBackground(fave);
                 	ninjafyPanel.setBackground(fave);
                 	namePanel.setBackground(fave);
                 	questionsPanel.setForeground(Color.BLACK);
-                	
                 }
-                else
-                {
+                
+                // No name provided
+                else {
+                	errorLabel.setText("Please enter a first or last name");
                 	villagePanel.add(errorLabel);
-                	errorLabel.setText("Please select a Hogwarts house");
                 }
                 
                 villagePanel.updateUI();
             }
             
-                });
+        });
         
         setSize(600,600);
         setVisible(true);
